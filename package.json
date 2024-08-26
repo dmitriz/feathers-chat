@@ -30,24 +30,27 @@
     "start": "node src/",
     "clean": "shx rm -rf test/data/",
     "update-dependencies": "ncu -u",
-    "mocha": "npm run clean && NODE_ENV=test mocha test/ --recursive --exit"
+    "mocha": "npm run clean && NODE_ENV=test mocha test/ --recursive --exit",
+    "prepare": "npm run snyk-protect",
+    "snyk-protect": "snyk-protect"
   },
   "dependencies": {
-    "@feathersjs/authentication": "^4.5.3",
+    "@feathersjs/authentication": "^4.5.16",
     "@feathersjs/authentication-local": "^4.5.4",
     "@feathersjs/authentication-oauth": "^4.5.4",
     "@feathersjs/configuration": "^4.5.3",
     "@feathersjs/errors": "^4.5.3",
     "@feathersjs/express": "^4.5.4",
     "@feathersjs/feathers": "^4.5.3",
-    "@feathersjs/socketio": "^4.5.4",
+    "@feathersjs/socketio": "^5.0.0",
     "compression": "^1.7.4",
     "cors": "^2.8.5",
     "feathers-nedb": "^5.1.0",
     "helmet": "^3.23.3",
     "nedb": "^1.8.0",
     "serve-favicon": "^2.5.0",
-    "winston": "^3.3.3"
+    "winston": "^3.3.3",
+    "@snyk/protect": "latest"
   },
   "devDependencies": {
     "axios": "^0.19.2",
@@ -57,5 +60,6 @@
     "npm-check-updates": "^7.0.1",
     "nyc": "^15.1.0",
     "shx": "^0.3.2"
-  }
+  },
+  "snyk": true
 }
